@@ -1,35 +1,64 @@
 import React from "react";
+import { FaPython, FaJava, FaDocker, FaReact, FaGitAlt, FaCode } from "react-icons/fa";
+import { SiScikitlearn, SiTensorflow, SiDjango, SiSpringboot, SiCplusplus, SiVite, SiKubernetes, SiAdobeillustrator } from "react-icons/si";
+
+const skills = [
+  {
+    category: "Data Science", items: [
+      { name: "Python", icon: <FaPython /> },
+      { name: "Scikit-learn", icon: <SiScikitlearn /> },
+      { name: "TensorFlow", icon: <SiTensorflow /> },
+      { name: "Hadoop", icon: <FaCode /> },
+      { name: "Kafka", icon: <FaCode /> },
+      { name: "Flink", icon: <FaCode /> }
+    ]
+  },
+  {
+    category: "Web Development", items: [
+      { name: "MERN Stack", icon: <FaReact /> },
+      { name: "Django", icon: <SiDjango /> },
+      { name: "Spring Boot", icon: <SiSpringboot /> }
+    ]
+  },
+  {
+    category: "Programming", items: [
+      { name: "Java", icon: <FaJava /> },
+      { name: "C++", icon: <SiCplusplus /> },
+      { name: "Python", icon: <FaPython /> }
+    ]
+  },
+  {
+    category: "Tools", items: [
+      { name: "Adobe Illustrator", icon: <SiAdobeillustrator /> },
+      { name: "Vite", icon: <SiVite /> },
+      { name: "Git", icon: <FaGitAlt /> },
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "Kubernetes", icon: <SiKubernetes /> }
+    ]
+  }
+];
 
 const Skills = () => {
-  const skills = [
-    { category: "Data Science", items: ["Python", "Scikit-learn", "TensorFlow", "Hadoop", "Kafka", "Flink"] },
-    { category: "Web Development", items: ["MERN Stack", "Django", "Spring Boot"] },
-    { category: "Programming", items: ["Java", "C++", "Python"] },
-    { category: "Tools", items: ["Adobe Illustrator", "Vite", "Git", "Docker", "Kubernetes"] },
-  ];
-
   return (
-    <section className="p-10 bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-blue-900 mb-12 relative inline-block">
-        Skills & Technologies
-        <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-500 transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"></span>
+    <section className="p-10 bg-gray-800 min-h-screen flex flex-col items-center text-green-400 font-mono">
+      <h2 className="text-4xl font-extrabold mb-8 border-b-4 border-green-400 pb-3">
+        [ Skills & Technologies ]
       </h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-5xl">
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="p-8 bg-white bg-opacity-90 backdrop-blur-lg border border-gray-200 rounded-3xl shadow-xl transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:border-blue-300"
+            className="p-6 bg-gray-700 border border-green-500 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-green-500/50"
           >
-            <h3 className="text-2xl font-bold text-blue-800 mb-4 flex items-center">
-              <span className="mr-2">📚</span> {/* Emoji for category */}
-              {skill.category}
+            <h3 className="text-2xl font-bold mb-4 flex items-center text-green-300">
+              <span className="mr-3">🚀</span> {skill.category}
             </h3>
             <ul className="space-y-3">
               {skill.items.map((item, i) => (
-                <li key={i} className="text-gray-700 flex items-center">
-                  <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></span>
-                  <span className="text-lg font-medium">{item}</span>
+                <li key={i} className="flex items-center text-lg font-medium text-green-200">
+                  <span className="text-2xl text-green-400 mr-3">{item.icon}</span>
+                  {item.name}
                 </li>
               ))}
             </ul>
