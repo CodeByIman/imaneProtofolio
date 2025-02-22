@@ -1,30 +1,28 @@
 import React from "react";
-const baseUrl = import.meta.env.BASE_URL;
 
 const projects = [
   {
     title: "Gestion Résidence",
     description: "Manage student residences with booking and maintenance tracking.",
     technologies: "Spring Boot, React, Tailwind CSS",
-    image: `/imaneProtofolio/gestion-residence.png`, // Dynamic base URL
+    video: "https://player.vimeo.com/video/1059354628?h=f5a8f69658&badge=0&autopause=0&player_id=0&app_id=58479", // Vimeo Video URL
     link: "https://github.com/CodeByIman/gestion-residence"
   },
   {
     title: "Search Apartment Near University",
     description: "Find student accommodations near universities with interactive filters.",
     technologies: "Django, React, Tailwind CSS",
-    image: `${baseUrl}search-apartment.png`,
+    video: "https://player.vimeo.com/video/1059354628?h=f5a8f69658&badge=0&autopause=0&player_id=0&app_id=58479", // Replace with your Vimeo link
     link: "https://github.com/CodeByIman/djangoProject"
   },
   {
     title: "Coachify – Social Media for Coaches & Clients",
     description: "Connect coaches and clients, share programs, and track progress.",
     technologies: "MERN Stack (MongoDB, Express, React, Node.js), Tailwind CSS",
-    image: `${baseUrl}coachify.png`,
+    video: "https://player.vimeo.com/video/1059354628?h=f5a8f69658&badge=0&autopause=0&player_id=0&app_id=58479", // Replace with your Vimeo link
     link: "https://github.com/CodeByIman/coachify"
   },
 ];
-
 
 const Projects = () => {
   return (
@@ -37,7 +35,17 @@ const Projects = () => {
             key={index}
             className="p-6 bg-gray-900 border border-green-400 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-green-500/50"
           >
-            <img src={project.image} alt={project.title} className="w-full h-40 object-cover rounded mb-4" />
+            {/* Vimeo Video Embed */}
+            <div style={{ paddingTop: '75%', position: 'relative' }}>
+              <iframe
+                src={project.video}
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }}
+                title={project.title}
+              ></iframe>
+            </div>
+
             <h3 className="text-xl font-bold mb-2">{project.title}</h3>
             <p className="text-green-300 mb-4">{project.description}</p>
             <p className="text-sm text-green-500">
