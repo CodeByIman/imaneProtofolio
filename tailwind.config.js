@@ -16,10 +16,16 @@ module.exports = {
         },
         dark: '#333333',
       },
+      animation: {
+        "twinkle": "twinkle 5s infinite ease-in-out",
+      },
+      keyframes: {
+        twinkle: {
+          "0%, 100%": { opacity: 0.2, transform: "scale(1)" },
+          "50%": { opacity: 1, transform: "scale(1.2)" },
+        },
+      },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require('@tailwindcss/forms')],
 };

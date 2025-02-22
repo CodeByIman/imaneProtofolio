@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 
 const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = `Hello, I'm Imane Bouboul\nMaster's student in Data Science & Big Data, specializing in AI, Machine Learning, and Web Development.\nPassionate about building AI-powered applications in Morocco.`;
+  const fullText = `Hello, I'm Imane Bouboul\nMaster's student in Big Data & Data Science, specializing in AI, Machine Learning, and Web Development.\nPassionate about creating impactful AI-powered applications in Morocco.`;
+
   const speed = 50; // Typing speed in ms
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from "react";
-import { FaPython, FaJava, FaDocker, FaReact, FaGitAlt, FaCode } from "react-icons/fa";
-import { SiScikitlearn, SiTensorflow, SiDjango, SiSpringboot, SiCplusplus, SiVite, SiKubernetes, SiAdobeillustrator } from "react-icons/si";
+import { FaPython, FaJava, FaDocker, FaReact, FaGitAlt, FaCode, FaCuttlefish, FaMicrochip, FaCss3Alt, FaHtml5, FaJsSquare, FaBootstrap } from "react-icons/fa";
+import { SiScikitlearn, SiTensorflow, SiDjango, SiSpringboot, SiCplusplus, SiVite, SiKubernetes, SiAdobeillustrator, SiNumpy, SiApachekafka, SiApacheflink, SiAnsible, SiTerraform, SiAngular } from "react-icons/si";
 
 const skills = [
   {
@@ -8,32 +8,43 @@ const skills = [
       { name: "Python", icon: <FaPython /> },
       { name: "Scikit-learn", icon: <SiScikitlearn /> },
       { name: "TensorFlow", icon: <SiTensorflow /> },
+      { name: "NumPy", icon: <SiNumpy /> },
       { name: "Hadoop", icon: <FaCode /> },
-      { name: "Kafka", icon: <FaCode /> },
-      { name: "Flink", icon: <FaCode /> }
+      { name: "Kafka", icon: <SiApachekafka /> },
+      { name: "Flink", icon: <SiApacheflink /> }
     ]
   },
   {
     category: "Web Development", items: [
       { name: "MERN Stack", icon: <FaReact /> },
+      { name: "Tailwind CSS", icon: <FaCss3Alt /> },
+      { name: "Bootstrap", icon: <FaBootstrap /> },
+      { name: "CSS", icon: <FaCss3Alt /> },
+      { name: "HTML", icon: <FaHtml5 /> },
       { name: "Django", icon: <SiDjango /> },
       { name: "Spring Boot", icon: <SiSpringboot /> }
     ]
   },
   {
     category: "Programming", items: [
-      { name: "Java", icon: <FaJava /> },
+      { name: "C", icon: <FaCuttlefish /> },
       { name: "C++", icon: <SiCplusplus /> },
-      { name: "Python", icon: <FaPython /> }
+      { name: "Java", icon: <FaJava /> },
+      { name: "Python", icon: <FaPython /> },
+      { name: "JavaScript", icon: <FaJsSquare /> },
+      { name: "Assembler", icon: <FaMicrochip /> },
+      { name: "Arduino", icon: <FaMicrochip /> }
     ]
   },
   {
-    category: "Tools", items: [
-      { name: "Adobe Illustrator", icon: <SiAdobeillustrator /> },
-      { name: "Vite", icon: <SiVite /> },
+    category: "DevOps & Tools", items: [
       { name: "Git", icon: <FaGitAlt /> },
       { name: "Docker", icon: <FaDocker /> },
-      { name: "Kubernetes", icon: <SiKubernetes /> }
+      { name: "Kubernetes", icon: <SiKubernetes /> },
+      { name: "Ansible", icon: <SiAnsible /> },
+      { name: "Terraform", icon: <SiTerraform /> },
+      { name: "Vite", icon: <SiVite /> },
+      { name: "Adobe Illustrator", icon: <SiAdobeillustrator /> }
     ]
   }
 ];

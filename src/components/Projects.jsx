@@ -1,24 +1,30 @@
 import React from "react";
-
-
+const baseUrl = import.meta.env.BASE_URL;
 
 const projects = [
   {
     title: "Gestion Résidence",
-    description: "A platform for managing student residences with advanced booking and maintenance tracking.",
+    description: "Manage student residences with booking and maintenance tracking.",
     technologies: "Spring Boot, React, Tailwind CSS",
+    image: `/imaneProtofolio/gestion-residence.png`, // Dynamic base URL
+    link: "https://github.com/CodeByIman/gestion-residence"
   },
   {
     title: "Search Apartment Near University",
-    description: "A search engine helping students find accommodations near universities with interactive filtering.",
+    description: "Find student accommodations near universities with interactive filters.",
     technologies: "Django, React, Tailwind CSS",
+    image: `${baseUrl}search-apartment.png`,
+    link: "https://github.com/CodeByIman/djangoProject"
   },
   {
     title: "Coachify – Social Media for Coaches & Clients",
-    description: "A social media platform where coaches connect with clients, share training programs, and track progress.",
+    description: "Connect coaches and clients, share programs, and track progress.",
     technologies: "MERN Stack (MongoDB, Express, React, Node.js), Tailwind CSS",
+    image: `${baseUrl}coachify.png`,
+    link: "https://github.com/CodeByIman/coachify"
   },
 ];
+
 
 const Projects = () => {
   return (
@@ -31,22 +37,23 @@ const Projects = () => {
             key={index}
             className="p-6 bg-gray-900 border border-green-400 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-green-500/50"
           >
-            <h3 className="text-xl font-bold mb-4">{project.title}</h3>
+            <img src={project.image} alt={project.title} className="w-full h-40 object-cover rounded mb-4" />
+            <h3 className="text-xl font-bold mb-2">{project.title}</h3>
             <p className="text-green-300 mb-4">{project.description}</p>
             <p className="text-sm text-green-500">
               <span className="text-green-400">Tech Stack:</span> {project.technologies}
             </p>
             <div className="mt-6">
-              <button className="px-4 py-2 bg-green-500 text-black font-semibold rounded hover:bg-green-600 transition-all duration-300">
-                View Project
-              </button>
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <button className="px-4 py-2 bg-green-500 text-black font-semibold rounded hover:bg-green-600 transition-all duration-300">
+                  View Project
+                </button>
+              </a>
             </div>
           </div>
         ))}
       </div>
-
     </section>
-
   );
 };
 
