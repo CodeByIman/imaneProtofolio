@@ -51,8 +51,8 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="p-10 bg-gray-800 min-h-screen flex flex-col items-center text-green-400 font-mono">
-      <h2 className="text-4xl font-extrabold mb-8 border-b-4 border-green-400 pb-3">
+    <section className="p-10 bg-[#1a1a2e] min-h-screen flex flex-col items-center text-[#e0e0e0] font-mono border-t border-[#00a8cc]">
+      <h2 className="text-3xl font-bold mb-8 border-b-2 border-[#00a8cc] pb-2">
         [ Skills & Technologies ]
       </h2>
 
@@ -60,15 +60,15 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="p-6 bg-gray-700 border border-green-500 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-green-500/50"
+            className="p-6 bg-[#16213e] border border-[#00a8cc] rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-[#00a8cc]/50"
           >
-            <h3 className="text-2xl font-bold mb-4 flex items-center text-green-300">
+            <h3 className="text-2xl font-bold mb-4 flex items-center text-[#00a8cc]">
               <span className="mr-3">🚀</span> {skill.category}
             </h3>
             <ul className="space-y-3">
               {skill.items.map((item, i) => (
-                <li key={i} className="flex items-center text-lg font-medium text-green-200">
-                  <span className="text-2xl text-green-400 mr-3">{item.icon}</span>
+                <li key={i} className="flex items-center text-lg font-medium text-[#e0e0e0] hover:text-[#00a8cc] transition-all duration-300">
+                  <span className="text-2xl text-[#00a8cc] mr-3">{item.icon}</span>
                   {item.name}
                 </li>
               ))}
