@@ -5,7 +5,7 @@ const projects = [
     title: "Gestion Résidence",
     description: "Manage student residences with booking and maintenance tracking.",
     technologies: "Spring Boot, React, Tailwind CSS",
-    video: "https://player.vimeo.com/video/1059354628?h=f5a8f69658&badge=0&autopause=0&player_id=0&app_id=58479",
+    video: "https://player.vimeo.com/video/1059408443?h=cf001cf941&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
     link: "https://github.com/CodeByIman/gestion-residence"
   },
   {
