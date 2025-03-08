@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaPython, FaJava, FaDocker, FaReact, FaGitAlt, FaCode, FaCuttlefish, FaMicrochip, FaCss3Alt, FaHtml5, FaJsSquare, FaBootstrap } from "react-icons/fa";
-import { SiScikitlearn, SiTensorflow, SiDjango, SiSpringboot, SiCplusplus, SiVite, SiKubernetes, SiAdobeillustrator, SiNumpy, SiApachekafka, SiApacheflink, SiAnsible, SiTerraform, SiAngular } from "react-icons/si";
+import { SiScikitlearn, SiTensorflow, SiDjango, SiSpringboot, SiCplusplus, SiVite, SiKubernetes, SiAdobeillustrator, SiNumpy, SiApachekafka, SiApacheflink, SiAnsible, SiTerraform } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const skills = [
@@ -9,13 +9,13 @@ const skills = [
     emoji: "📊",
     description: "Processing and analyzing complex datasets to extract meaningful insights",
     items: [
-      { name: "Python", icon: <FaPython />, level: 90 },
-      { name: "Scikit-learn", icon: <SiScikitlearn />, level: 85 },
-      { name: "TensorFlow", icon: <SiTensorflow />, level: 80 },
-      { name: "NumPy", icon: <SiNumpy />, level: 88 },
-      { name: "Hadoop", icon: <FaCode />, level: 75 },
-      { name: "Kafka", icon: <SiApachekafka />, level: 82 },
-      { name: "Flink", icon: <SiApacheflink />, level: 78 }
+      { name: "Python", icon: <FaPython /> },
+      { name: "Scikit-learn", icon: <SiScikitlearn /> },
+      { name: "TensorFlow", icon: <SiTensorflow /> },
+      { name: "NumPy", icon: <SiNumpy /> },
+      { name: "Hadoop", icon: <FaCode /> },
+      { name: "Kafka", icon: <SiApachekafka /> },
+      { name: "Flink", icon: <SiApacheflink /> }
     ]
   },
   {
@@ -23,13 +23,13 @@ const skills = [
     emoji: "🌐",
     description: "Creating responsive, modern web applications with cutting-edge technologies",
     items: [
-      { name: "MERN Stack", icon: <FaReact />, level: 88 },
-      { name: "Tailwind CSS", icon: <FaCss3Alt />, level: 92 },
-      { name: "Bootstrap", icon: <FaBootstrap />, level: 90 },
-      { name: "CSS", icon: <FaCss3Alt />, level: 95 },
-      { name: "HTML", icon: <FaHtml5 />, level: 98 },
-      { name: "Django", icon: <SiDjango />, level: 85 },
-      { name: "Spring Boot", icon: <SiSpringboot />, level: 80 }
+      { name: "MERN Stack", icon: <FaReact /> },
+      { name: "Tailwind CSS", icon: <FaCss3Alt /> },
+      { name: "Bootstrap", icon: <FaBootstrap /> },
+      { name: "CSS", icon: <FaCss3Alt /> },
+      { name: "HTML", icon: <FaHtml5 /> },
+      { name: "Django", icon: <SiDjango /> },
+      { name: "Spring Boot", icon: <SiSpringboot /> }
     ]
   },
   {
@@ -37,13 +37,13 @@ const skills = [
     emoji: "💻",
     description: "Proficient in multiple programming paradigms and language ecosystems",
     items: [
-      { name: "C", icon: <FaCuttlefish />, level: 85 },
-      { name: "C++", icon: <SiCplusplus />, level: 82 },
-      { name: "Java", icon: <FaJava />, level: 88 },
-      { name: "Python", icon: <FaPython />, level: 92 },
-      { name: "JavaScript", icon: <FaJsSquare />, level: 90 },
-      { name: "Assembler", icon: <FaMicrochip />, level: 75 },
-      { name: "Arduino", icon: <FaMicrochip />, level: 80 }
+      { name: "C", icon: <FaCuttlefish /> },
+      { name: "C++", icon: <SiCplusplus /> },
+      { name: "Java", icon: <FaJava /> },
+      { name: "Python", icon: <FaPython /> },
+      { name: "JavaScript", icon: <FaJsSquare /> },
+      { name: "Assembler", icon: <FaMicrochip /> },
+      { name: "Arduino", icon: <FaMicrochip /> }
     ]
   },
   {
@@ -51,13 +51,13 @@ const skills = [
     emoji: "🔧",
     description: "Automating deployment pipelines and optimizing infrastructure management",
     items: [
-      { name: "Git", icon: <FaGitAlt />, level: 90 },
-      { name: "Docker", icon: <FaDocker />, level: 88 },
-      { name: "Kubernetes", icon: <SiKubernetes />, level: 82 },
-      { name: "Ansible", icon: <SiAnsible />, level: 78 },
-      { name: "Terraform", icon: <SiTerraform />, level: 80 },
-      { name: "Vite", icon: <SiVite />, level: 85 },
-      { name: "Adobe Illustrator", icon: <SiAdobeillustrator />, level: 75 }
+      { name: "Git", icon: <FaGitAlt /> },
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "Kubernetes", icon: <SiKubernetes /> },
+      { name: "Ansible", icon: <SiAnsible /> },
+      { name: "Terraform", icon: <SiTerraform /> },
+      { name: "Vite", icon: <SiVite /> },
+      { name: "Adobe Illustrator", icon: <SiAdobeillustrator /> }
     ]
   }
 ];
@@ -166,9 +166,9 @@ const Skills = () => {
   return (
     <section
       ref={sectionRef}
-      className="p-10 relative bg-[#1a1a2e] min-h-screen flex flex-col items-center text-[#e0e0e0] font-mono overflow-hidden"
+      className="p-6 md:p-10 relative bg-[#1a1a2e] min-h-screen flex flex-col items-center text-[#e0e0e0] font-mono overflow-hidden"
     >
-      {/* Background grid effect (added from Contact component) */}
+      {/* Background grid effect */}
       <div className="absolute inset-0 grid grid-cols-12 grid-rows-12 opacity-5 pointer-events-none">
         {Array.from({ length: 144 }).map((_, i) => (
           <div key={i} className="border border-[#00a8cc]"></div>
@@ -181,7 +181,7 @@ const Skills = () => {
           className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,168,204,0.15)_0%,transparent_60%)]"
           style={{
             transform: `translate(${(mousePosition.x / window.innerWidth - 0.5) * -20}px, ${(mousePosition.y / window.innerHeight - 0.5) * -20}px)`,
-            transition: "transform 0.1s ease-out"  // Faster transition
+            transition: "transform 0.1s ease-out"
           }}
         />
       </div>
@@ -216,7 +216,7 @@ const Skills = () => {
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-4xl font-bold mb-8 relative z-10"
+        className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 relative z-10"
       >
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00a8cc] to-[#00d4ff] pb-2">
           &lt; Skills &amp; Technologies /&gt;
@@ -228,12 +228,13 @@ const Skills = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 0.8, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-        className="text-lg text-center max-w-3xl mb-12 text-[#a0a0d0]"
+        className="text-base md:text-lg text-center max-w-3xl mb-8 md:mb-12 text-[#a0a0d0]"
       >
         Expertise across various domains, continuously expanding my technological horizons.
       </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-6xl relative z-10">
+      {/* Updated grid with more columns for larger screens */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl relative z-10">
         {skills.map((skill, index) => {
           const isVisible = visibleCards.includes(index);
 
@@ -246,10 +247,10 @@ const Skills = () => {
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{
                 duration: 0.5,
-                delay: 0.15 * visibleCards.indexOf(index), // Sequential animation based on card visibility
+                delay: 0.1 * visibleCards.indexOf(index),
                 ease: "easeOut"
               }}
-              className="relative group"
+              className="relative group h-full"
               onMouseEnter={() => setActiveCard(index)}
               onMouseLeave={() => setActiveCard(null)}
               onMouseMove={(e) => {
@@ -260,59 +261,49 @@ const Skills = () => {
                 }
               }}
               style={{
-                transition: 'transform 0.1s ease-out' // Faster transition
+                transition: 'transform 0.1s ease-out'
               }}
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00a8cc] to-[#004e7c] opacity-50 rounded-lg blur-sm group-hover:opacity-100 group-hover:blur transition-all duration-200" />
 
-              <div className="p-6 bg-gradient-to-br from-[#16213e] to-[#0f172a] backdrop-blur-md border border-[#00a8cc]/30 rounded-lg shadow-xl relative h-full z-10 overflow-hidden">
+              <div className="p-4 md:p-6 bg-gradient-to-br from-[#16213e] to-[#0f172a] backdrop-blur-md border border-[#00a8cc]/30 rounded-lg shadow-xl relative h-full z-10 overflow-hidden flex flex-col">
                 <div className="absolute inset-0 overflow-hidden opacity-10 group-hover:opacity-20 transition-opacity duration-300">
-                  <Particles count={15} />
+                  <Particles count={10} />
                 </div>
 
-                <div className="absolute top-4 right-4 w-24 h-24 rounded-full bg-[#00a8cc]/5 blur-xl group-hover:bg-[#00a8cc]/10 group-hover:blur-2xl transition-all duration-300" />
+                <div className="absolute top-4 right-4 w-16 h-16 md:w-24 md:h-24 rounded-full bg-[#00a8cc]/5 blur-xl group-hover:bg-[#00a8cc]/10 group-hover:blur-2xl transition-all duration-300" />
 
-                <h3 className="text-2xl font-bold mb-4 flex items-center text-[#00a8cc] group-hover:text-[#00d4ff] transition-colors duration-200">
-                  <span className="mr-3 text-2xl transform group-hover:scale-125 transition-transform duration-200">
+                <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 flex items-center text-[#00a8cc] group-hover:text-[#00d4ff] transition-colors duration-200">
+                  <span className="mr-2 md:mr-3 text-xl md:text-2xl transform group-hover:scale-125 transition-transform duration-200">
                     {skill.emoji}
                   </span>
                   {skill.category}
                 </h3>
 
-                <p className="text-[#a0a0d0] mb-6 text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-200">
+                <p className="text-[#a0a0d0] mb-4 md:mb-6 text-xs md:text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-200">
                   {skill.description}
                 </p>
 
-                <ul className="space-y-4">
+                {/* Skill items grid layout */}
+                <div className="grid grid-cols-2 gap-2 mt-auto">
                   {skill.items.map((item, i) => (
-                    <motion.li
+                    <motion.div
                       key={i}
                       initial={{ x: -10, opacity: 0 }}
                       animate={activeCard === index ?
                         { x: 0, opacity: 1, transition: { delay: i * 0.03, duration: 0.2 } } :
                         { x: 0, opacity: 1, transition: { duration: 0.2 } }}
-                      className="flex items-center justify-between text-lg font-medium group/item"
+                      className="flex items-center justify-start group/item"
                     >
-                      <div className="flex items-center">
-                        <span className="text-2xl text-[#00a8cc] mr-3 transform group-hover/item:rotate-12 transition-transform duration-200">
-                          {item.icon}
-                        </span>
-                        <span className="text-[#e0e0e0] group-hover/item:text-white transition-colors duration-200">
-                          {item.name}
-                        </span>
-                      </div>
-
-                      <div className="h-1.5 w-24 bg-[#0c1429] rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={activeCard === index ? { width: `${item.level}%` } : { width: 0 }}
-                          transition={{ duration: 0.4, delay: i * 0.03 }}
-                          className="h-full bg-gradient-to-r from-[#00a8cc] to-[#00d4ff] rounded-full"
-                        />
-                      </div>
-                    </motion.li>
+                      <span className="text-lg md:text-xl text-[#00a8cc] mr-2 transform group-hover/item:rotate-12 transition-transform duration-200">
+                        {item.icon}
+                      </span>
+                      <span className="text-sm md:text-base text-[#e0e0e0] group-hover/item:text-white transition-colors duration-200">
+                        {item.name}
+                      </span>
+                    </motion.div>
                   ))}
-                </ul>
+                </div>
 
                 {/* Quick-response particles for active cards */}
                 {activeCard === index && (
@@ -333,7 +324,7 @@ const Skills = () => {
                             y: Math.random() * 150 - 75
                           }}
                           transition={{
-                            duration: Math.random() * 1.5 + 1, // Faster animation
+                            duration: Math.random() * 1.5 + 1,
                             repeat: Infinity,
                             repeatType: "loop"
                           }}
@@ -364,7 +355,7 @@ const Skills = () => {
           transform: 'translate(-50%, -50%)',
           background: 'radial-gradient(circle, rgba(0,168,204,0.8) 0%, rgba(0,168,204,0) 70%)',
           filter: 'blur(2px)',
-          transition: 'opacity 0.2s ease, left 0.05s linear, top 0.05s linear' // Faster cursor
+          transition: 'opacity 0.2s ease, left 0.05s linear, top 0.05s linear'
         }}
       />
 

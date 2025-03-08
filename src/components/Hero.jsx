@@ -99,27 +99,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Links section */}
-          {showLinks && (
-            <div className="animate-fade-in">
-              <span className="text-[#00a8cc] font-bold">~$ </span>
-              <span className="text-green-400">cat ./connect.md</span>
-              <div className="mt-2 ml-4 flex space-x-4">
-                {links.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-[#16213e] border border-[#00a8cc] rounded-md text-[#00a8cc] hover:bg-[#00a8cc] hover:text-[#16213e] transition-all duration-300 animate-slide-in flex items-center"
-                    style={{ animationDelay: `${index * 150}ms` }}
-                  >
-                    <span>{link.name}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
+
 
           {/* Command prompt */}
           <div className="mt-6 flex items-center">
