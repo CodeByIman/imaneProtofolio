@@ -62,12 +62,17 @@ const skills = [
   }
 ];
 
+// Title animation letters array
+const titleLetters = "TECHNICAL ARSENAL".split("");
+
 const Skills = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [visibleCards, setVisibleCards] = useState([]);
   const [activeCard, setActiveCard] = useState(null);
   const sectionRef = useRef(null);
   const cardRefs = useRef([]);
+  const [isInView, setIsInView] = useState(false);
+  const titleRef = useRef(null);
 
   // Set up card refs
   useEffect(() => {
@@ -82,6 +87,33 @@ const Skills = () => {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  // Title in-view detection
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      });
+    }, options);
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+    };
   }, []);
 
   // Intersection Observer for scroll animations
@@ -212,28 +244,91 @@ const Skills = () => {
         ))}
       </div>
 
-      <motion.h2
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 relative z-10"
+      {/* New advanced title design */}
+      <div
+        ref={titleRef}
+        className="relative w-full max-w-4xl mb-16 flex flex-col items-center z-20"
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00a8cc] to-[#00d4ff] pb-2">
-          &lt; Skills &amp; Technologies /&gt;
-        </span>
-        <div className="h-1 w-full mt-2 bg-gradient-to-r from-[#00a8cc] to-transparent rounded-full" />
-      </motion.h2>
+        {/* Glowing background element */}
+        <div className="absolute -inset-8 bg-gradient-to-r from-[#00a8cc]/0 via-[#00a8cc]/10 to-[#00a8cc]/0 blur-xl opacity-70 rounded-full transform -translate-y-1/4"></div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 0.8, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-        className="text-base md:text-lg text-center max-w-3xl mb-8 md:mb-12 text-[#a0a0d0]"
-      >
-        Expertise across various domains, continuously expanding my technological horizons.
-      </motion.p>
+        {/* Animated title with letter animation */}
+        <div className="relative flex justify-center mb-6 overflow-hidden">
+          {titleLetters.map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{ y: 40, opacity: 0 }}
+              animate={isInView ? {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 0.6,
+                  delay: 0.05 * index,
+                  ease: [0.215, 0.61, 0.355, 1]
+                }
+              } : {}}
+              className="inline-block px-1 text-4xl sm:text-5xl md:text-4xl font-extrabold tracking-wider"
+              style={{
+                textShadow: '0 0 15px rgba(0, 168, 204, 0.8), 0 0 10px rgba(0, 168, 204, 0.4)',
+                color: letter === " " ? 'transparent' : '#ffffff'
+              }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </div>
 
-      {/* Updated grid with more columns for larger screens */}
+        {/* Animated decorative line */}
+        <motion.div
+          initial={{ width: 0, opacity: 0 }}
+          animate={isInView ? { width: "100%", opacity: 1 } : {}}
+          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+          className="h-0.5 bg-gradient-to-r from-transparent via-[#00a8cc] to-transparent rounded-full mb-6"
+        />
+
+        {/* Subtitle with typing effect */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.8 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-base md:text-lg text-center max-w-3xl text-[#a0a0d0] relative"
+        >
+          <span className="relative inline-block">
+            <span>Cutting-edge expertise driving innovation across multiple domains</span>
+            <motion.span
+              initial={{ left: 0 }}
+              animate={isInView ? { left: "105%" } : {}}
+              transition={{ duration: 1.5, delay: 0.8, ease: "easeInOut" }}
+              className="absolute top-0 bottom-0 left-0 w-full bg-[#1a1a2e]"
+              style={{ mixBlendMode: "darken" }}
+            />
+          </span>
+        </motion.p>
+
+        {/* Animated tech dots decoration */}
+        <div className="flex space-x-2 mt-6">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={isInView ? { scale: 1, opacity: [0, 1, 0.5] } : {}}
+              transition={{
+                duration: 0.6,
+                delay: 1 + (i * 0.1),
+                opacity: {
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 2,
+                  delay: 1 + (i * 0.1)
+                }
+              }}
+              className="w-2 h-2 rounded-full bg-[#00a8cc]"
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Skills grid - same as before */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl relative z-10">
         {skills.map((skill, index) => {
           const isVisible = visibleCards.includes(index);
