@@ -14,7 +14,7 @@ const projects = [
     title: "Search Apartment Near University",
     description: "Interactive application helping students find optimal accommodations with proximity filtering and neighborhood safety analytics.",
     technologies: ["Django", "React", "Tailwind CSS"],
-    video: "https://player.vimeo.com/video/1059354628?h=f5a8f69658&badge=0&autopause=0&player_id=0&app_id=58479",
+    video: "https://player.vimeo.com/video/1064447800?h=3fee748ae3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
     link: "https://github.com/CodeByIman/djangoProject",
     color: "#7b2cbf"
   },
